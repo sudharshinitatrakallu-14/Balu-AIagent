@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f7f2" />
+    <meta name="description" content="Balulu helps students notice time leaks, protect focus, and choose what to do next." />
+    <title>Balulu | Study with intention</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Primary navigation">
+        <a class="brand" href="#today" aria-label="Balulu home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span>balulu</span>
+        </a>
+
+        <div class="nav-label">YOUR SPACE</div>
+        <nav class="primary-nav">
+          <button class="nav-item is-active" type="button" data-view="today" aria-current="page"><span class="nav-glyph" aria-hidden="true">01</span>Today</button>
+          <button class="nav-item" type="button" data-view="focus"><span class="nav-glyph" aria-hidden="true">02</span>Focus room</button>
+          <button class="nav-item" type="button" data-view="insights"><span class="nav-glyph" aria-hidden="true">03</span>Time insights</button>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="streak-block">
+            <div class="streak-top"><span class="streak-dot"></span><span>YOUR STREAK</span></div>
+            <strong>4 days</strong>
+            <p>Small steps count. Keep going.</p>
+          </div>
+          <button class="profile-button" type="button" aria-label="Student profile">
+            <span class="avatar">M</span>
+            <span class="profile-copy"><strong>Maya Chen</strong><small>Student</small></span>
+            <span class="profile-more" aria-hidden="true">...</span>
+          </button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <div class="mobile-brand"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>balulu</span></div>
+
+        <section class="view is-visible" id="today-view" aria-labelledby="today-title">
+          <header class="page-heading">
+            <div>
+              <p class="eyebrow" id="today-date">TUESDAY, SEPTEMBER 29</p>
+              <h1 id="today-title">Make today <span>count.</span></h1>
+              <p class="heading-note">A little focus goes a long way. Here's your day at a glance.</p>
+            </div>
+            <button class="button button-dark" type="button" data-go-focus><span aria-hidden="true">+</span> Start a focus session</button>
+          </header>
+
+          <div class="stats-row" aria-label="Today's study summary">
+            <article class="stat-card stat-focus">
+              <div class="stat-label">FOCUSED TODAY <span class="stat-icon icon-green" aria-hidden="true">F</span></div>
+              <div class="stat-number"><strong id="focused-minutes">86</strong><span>min</span></div>
+              <div class="stat-foot"><span class="trend-up">+18 min</span> vs. your daily average</div>
+              <div class="mini-progress"><span style="width: 58%"></span></div>
+            </article>
+            <article class="stat-card stat-distractions">
+              <div class="stat-label">TIME LEAKS SPOTTED <span class="stat-icon icon-coral" aria-hidden="true">!</span></div>
+              <div class="stat-number"><strong>3</strong><span>moments</span></div>
+              <div class="stat-foot">About <strong>24 min</strong> pulled off track</div>
+              <div class="stat-foot stat-soft">Your biggest leak: social scrolling</div>
+            </article>
+            <article class="stat-card stat-goal">
+              <div class="stat-label">DAILY STUDY GOAL <span class="stat-icon icon-blue" aria-hidden="true">G</span></div>
+              <div class="goal-line"><div class="stat-number"><strong id="goal-minutes">86</strong><span> / 150 min</span></div><span class="goal-percent">57%</span></div>
+              <div class="goal-track"><span style="width: 57%"></span></div>
+              <div class="stat-foot">64 minutes to reach your goal</div>
+            </article>
+          </div>
+
+          <div class="dashboard-grid">
+            <section class="panel weekly-panel" aria-labelledby="weekly-title">
+              <div class="panel-heading">
+                <div><p class="eyebrow">YOUR RHYTHM</p><h2 id="weekly-title">Focus this week</h2></div>
+                <span class="period-label">LAST 7 DAYS</span>
+              </div>
+              <div class="chart-summary"><strong>6h 42m</strong><span>focused time <i>+12%</i></span></div>
+              <div class="bar-chart" role="img" aria-label="Weekly focus minutes: Monday 55, Tuesday 86, Wednesday 72, Thursday 110, Friday 64, Saturday 42, Sunday 88">
+                <div class="bar-column"><span class="bar-value">55m</span><div class="bar-track"><i style="height: 42%"></i></div><span class="bar-day">M</span></div>
+                <div class="bar-column is-today"><span class="bar-value">86m</span><div class="bar-track"><i style="height: 66%"></i></div><span class="bar-day">T</span></div>
+                <div class="bar-column"><span class="bar-value">72m</span><div class="bar-track"><i style="height: 55%"></i></div><span class="bar-day">W</span></div>
+                <div class="bar-column"><span class="bar-value">110m</span><div class="bar-track"><i style="height: 84%"></i></div><span class="bar-day">T</span></div>
+                <div class="bar-column"><span class="bar-value">64m</span><div class="bar-track"><i style="height: 49%"></i></div><span class="bar-day">F</span></div>
+                <div class="bar-column"><span class="bar-value">42m</span><div class="bar-track"><i style="height: 32%"></i></div><span class="bar-day">S</span></div>
+                <div class="bar-column"><span class="bar-value">88m</span><div class="bar-track"><i style="height: 67%"></i></div><span class="bar-day">S</span></div>
+              </div>
+              <div class="chart-baseline"><span>MON</span><span>TODAY</span><span>SUN</span></div>
+            </section>
+
+            <section class="panel leak-panel" aria-labelledby="leak-title">
+              <div class="panel-heading">
+                <div><p class="eyebrow">A GENTLE CLUE</p><h2 id="leak-title">Where time went</h2></div>
+                <button class="text-button" type="button" data-view-link="insights">Details <span aria-hidden="true">-&gt;</span></button>
+              </div>
+              <div class="leak-content">
+                <div class="donut" role="img" aria-label="Time away from study: social scrolling 42%, messaging 33%, other 25%"><div><strong>24</strong><span>min away</span></div></div>
+                <div class="legend-list">
+                  <div><i class="legend-dot dot-coral"></i><span>Social scrolling</span><strong>10m</strong></div>
+                  <div><i class="legend-dot dot-blue"></i><span>Messages</span><strong>8m</strong></div>
+                  <div><i class="legend-dot dot-yellow"></i><span>Other breaks</span><strong>6m</strong></div>
+                </div>
+              </div>
+              <p class="insight-note"><span aria-hidden="true">B</span> A 10-minute app break became 24. Try parking your phone across the room for one study block.</p>
+            </section>
+          </div>
+
+          <section class="task-section" aria-labelledby="tasks-title">
+            <div class="section-heading">
+              <div><p class="eyebrow">A GOOD NEXT STEP</p><h2 id="tasks-title">Your priorities</h2></div>
+              <button class="text-button" type="button" data-view-link="focus">Plan a focus block <span aria-hidden="true">-&gt;</span></button>
+            </div>
+            <div class="task-list" id="task-list" aria-live="polite"></div>
+          </section>
+        </section>
+
+        <section class="view" id="focus-view" aria-labelledby="focus-title" hidden>
+          <header class="page-heading compact-heading">
+            <div><p class="eyebrow">FOCUS ROOM</p><h1 id="focus-title">One thing <span>at a time.</span></h1><p class="heading-note">Choose a task. Balu will help you protect the next block.</p></div>
+          </header>
+          <div class="focus-layout">
+            <section class="focus-session panel" aria-label="Focus timer">
+              <div class="session-status"><span class="session-indicator" id="session-indicator"></span><span id="session-status-text">READY WHEN YOU ARE</span></div>
+              <p class="timer-display" id="timer-display" aria-live="off">25:00</p>
+              <p class="timer-caption" id="timer-caption">A focused block, then a proper break.</p>
+              <div class="timer-actions"><button class="button button-dark button-large" id="focus-toggle" type="button">Start focus</button><button class="button button-outline" id="focus-reset" type="button">Reset</button></div>
+              <div class="session-rule"><span class="rule-line"></span><span>YOUR CURRENT TASK</span><span class="rule-line"></span></div>
+              <label class="task-select-label" for="focus-task">What are you working on?</label>
+              <select id="focus-task" class="task-select"></select>
+              <button class="text-button distraction-test" type="button" id="distraction-test">I got distracted <span aria-hidden="true">-&gt;</span></button>
+            </section>
+            <aside class="focus-side">
+              <div class="focus-tip"><p class="eyebrow">A SMALL RESET</p><h2>Make distractions harder to reach.</h2><p>Put your phone out of arm's reach, close the tabs you don't need, and leave one clear next step in front of you.</p><div class="tip-foot"><span class="tip-mark">B</span><span>Balu's nudge for this block</span></div></div>
+              <div class="next-up"><p class="eyebrow">UP NEXT</p><h3>After this block</h3><p>Take a 5-minute screen-free break. Stretch, grab water, then decide what comes next.</p></div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="view" id="insights-view" aria-labelledby="insights-title" hidden>
+          <header class="page-heading compact-heading"><div><p class="eyebrow">TIME INSIGHTS</p><h1 id="insights-title">Notice the <span>patterns.</span></h1><p class="heading-note">A clearer picture helps you make a kinder plan.</p></div><span class="period-label">THIS WEEK</span></header>
+          <div class="insight-summary-grid">
+            <article class="insight-number"><p class="eyebrow">FOCUS TIME</p><strong>6h 42m</strong><span class="trend-up">12% more than last week</span></article>
+            <article class="insight-number"><p class="eyebrow">DISTRACTION MOMENTS</p><strong>17</strong><span>Down 4 from last week</span></article>
+            <article class="insight-number"><p class="eyebrow">BEST FOCUS WINDOW</p><strong>9-11 AM</strong><span>Most consistent study time</span></article>
+          </div>
+          <section class="panel insights-chart-panel"><div class="panel-heading"><div><p class="eyebrow">MINUTES PER DAY</p><h2>Study time, day by day</h2></div><span class="chart-key"><i></i> Focused minutes</span></div><div class="large-chart" role="img" aria-label="Weekly focus time in minutes, with Thursday highest at 110 minutes"><div class="chart-gridlines"><span>120</span><span>90</span><span>60</span><span>30</span><span>0</span></div><div class="large-bars"><div><i style="height: 46%"></i><span>Mon</span></div><div class="is-today"><i style="height: 72%"></i><span>Tue</span></div><div><i style="height: 60%"></i><span>Wed</span></div><div><i style="height: 92%"></i><span>Thu</span></div><div><i style="height: 53%"></i><span>Fri</span></div><div><i style="height: 35%"></i><span>Sat</span></div><div><i style="height: 73%"></i><span>Sun</span></div></div></div></section>
+          <section class="panel pattern-panel"><div class="panel-heading"><div><p class="eyebrow">TIME AWAY FROM STUDY</p><h2>Your distraction mix</h2></div></div><div class="pattern-row"><span class="pattern-swatch dot-coral"></span><div class="pattern-copy"><strong>Social scrolling</strong><small>Most common around your evening study block</small></div><div class="pattern-meter"><i style="width: 72%"></i></div><strong>42%</strong></div><div class="pattern-row"><span class="pattern-swatch dot-blue"></span><div class="pattern-copy"><strong>Messages</strong><small>Mostly short check-ins between tasks</small></div><div class="pattern-meter"><i style="width: 55%"></i></div><strong>33%</strong></div><div class="pattern-row"><span class="pattern-swatch dot-yellow"></span><div class="pattern-copy"><strong>Other breaks</strong><small>Unplanned tabs and room interruptions</small></div><div class="pattern-meter"><i style="width: 42%"></i></div><strong>25%</strong></div><p class="privacy-note">These insights use sample activity for this prototype. Balulu does not monitor other apps or your device.</p></section>
+        </section>
+      </main>
+
+      <aside class="assistant-panel" aria-label="Balu study assistant">
+        <div class="assistant-header"><div class="balu-avatar" aria-hidden="true">B</div><div><strong>Balu</strong><span>Llama 3.2 · running locally</span></div><span class="online-dot" aria-label="Local model connection"></span></div>
+        <div class="assistant-context"><span class="context-icon" aria-hidden="true">TODAY</span><span>Here to help you choose the next step.</span></div>
+        <div class="chat-messages" id="chat-messages" aria-live="polite">
+          <div class="chat-time">A MOMENT AGO</div>
+          <div class="message message-balu"><p>Hey Maya! You've got a few things on your plate. Want help figuring out what to tackle first?</p><span class="message-time">Balu</span></div>
+          <div class="quick-prompts"><button type="button" data-prompt="What should I work on first?">What first?</button><button type="button" data-prompt="Help me focus for my next study block">Help me focus</button></div>
+        </div>
+        <form class="chat-composer" id="chat-form"><label class="sr-only" for="chat-input">Ask Balu a question</label><textarea id="chat-input" rows="1" placeholder="Ask Balu anything..." maxlength="240"></textarea><button class="send-button" type="submit" aria-label="Send message"><span aria-hidden="true">-&gt;</span></button></form>
+        <div class="assistant-disclaimer">Runs locally with Ollama; not a replacement for your teacher.</div>
+      </aside>
+
+      <div class="nudge-toast" id="nudge-toast" role="status" aria-live="polite" hidden>
+        <span class="nudge-mark" aria-hidden="true">B</span><div class="nudge-copy"><strong>Quick check-in</strong><p id="nudge-message">Looks like your focus drifted. Want to come back to your task?</p></div><button class="nudge-return" id="nudge-return" type="button">I'm back</button><button class="nudge-close" id="nudge-close" type="button" aria-label="Dismiss focus reminder">x</button>
+      </div>
+      <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+    </div>
+  </body>
+</html>
